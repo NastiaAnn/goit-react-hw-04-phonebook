@@ -14,18 +14,15 @@ export function Form({ addUserProps }) {
       setNumber(value);
     }
   };
-
   const handleFormSubmit = event => {
     event.preventDefault();
     addUserProps({ name, number });
     reset();
   };
-
   const reset = () => {
     setName('');
     setNumber('');
   };
-
   return (
     <ContactsForm onSubmit={handleFormSubmit}>
       <FormLabel>
@@ -33,7 +30,7 @@ export function Form({ addUserProps }) {
         <FormText
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={name}
